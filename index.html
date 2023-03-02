@@ -14,6 +14,11 @@
         // The data was sent from your site.
         // Data sent with postMessage is stored in event.data:
         console.log(event.data);
+        if(event.data)
+        {
+            document.getElementById('sfdcStatus').innerHtml=event.data.isSFDC?'YES':'NO'
+            document.getElementById('sfdcLogin').innerHtml=event.data.SFDCLoggedInUse || 'Not Available'
+        }
     } else {
         // The data was NOT sent from your site!
         // Be careful! Do not use it. This else branch is
@@ -23,5 +28,7 @@
 });
     </script>
 <div>Sample External Page</div>
+    <div> is it SFDC : <span id='sfdcStatus'> NO </span> </div>
+    <div> SFDC LoggedInUser : <span id='sfdcLogin'/> Not Available </span> </div>
 </body>
 </html>
