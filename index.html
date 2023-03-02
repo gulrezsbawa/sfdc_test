@@ -8,8 +8,19 @@
 </head>
 <body>
     <script>
-    console.log(window.parent.window.isSFDC)
-    console.log(window.parent.window.SFDCLoggedInUser)
+    window.addEventListener('message', event => {
+    // IMPORTANT: check the origin of the data!
+    if (event.origin === 'https://d61000000ud2weag-dev-ed--c.vf.force.com/apex/JNEmbedded') {
+        // The data was sent from your site.
+        // Data sent with postMessage is stored in event.data:
+        console.log(event.data);
+    } else {
+        // The data was NOT sent from your site!
+        // Be careful! Do not use it. This else branch is
+        // here just for clarity, you usually shouldn't need it.
+        return;
+    }
+});
     </script>
 <div>Hello from SFDC 2</div>
 </body>
