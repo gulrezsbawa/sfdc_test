@@ -17,7 +17,7 @@
         if(event.data)
         {
             document.getElementById('sfdcStatus').innerHTML=event.data.isSFDC?'YES':'NO'
-            document.getElementById('sfdcLogin').innerHTML=event.data.SFDCLoggedInUse || 'Not Available'
+            document.getElementById('sfdcLogin').innerHTML=event.data.SFDCLoggedInUser || 'Not Available'
         }
     } else {
         // The data was NOT sent from your site!
@@ -28,7 +28,7 @@
 });
     </script>
 <div>Sample External Page</div>
-    <div> is it SFDC : <span id='sfdcStatus'> NO </span> </div>
+    <div> SFDC Embedded : <span id='sfdcStatus'> NO </span> </div>
     <div> SFDC LoggedInUser : <span id='sfdcLogin'/> Not Available </span> </div>
 </body>
 </html>
