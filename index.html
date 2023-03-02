@@ -16,8 +16,8 @@
         console.log(event.data);
         if(event.data)
         {
-            document.getElementById('sfdcStatus').innerHtml=event.data.isSFDC?'YES':'NO'
-            document.getElementById('sfdcLogin').innerHtml=event.data.SFDCLoggedInUse || 'Not Available'
+            document.getElementById('sfdcStatus').innerHTML=event.data.isSFDC?'YES':'NO'
+            document.getElementById('sfdcLogin').innerHTML=event.data.SFDCLoggedInUse || 'Not Available'
         }
     } else {
         // The data was NOT sent from your site!
